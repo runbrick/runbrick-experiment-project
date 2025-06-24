@@ -38,4 +38,4 @@ build/
 ### Mac OS ###
 .DS_Store
 
-!/experiment-docker/docker-compose.yml
+/experiment-docker/mysql/
