@@ -3,20 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.runbrick</groupId>
+        <artifactId>runbrick-experiment-project</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <groupId>com.runbrick</groupId>
-    <artifactId>runbrick-experiment-project</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>message-queue-project</artifactId>
     <packaging>pom</packaging>
-    <description>runbrick的实验田</description>
-
-
     <modules>
-        <module>xxljob-experiment-project</module>
-        <module>plc4x-experiment-project</module>
-        <module>plc4x-experiment-project/plx4x-modbus-project</module>
-        <module>mockito-experiment-project</module>
-        <module>message-queue-project</module>
+        <module>rabbitmq-experiment-project</module>
     </modules>
 
     <properties>

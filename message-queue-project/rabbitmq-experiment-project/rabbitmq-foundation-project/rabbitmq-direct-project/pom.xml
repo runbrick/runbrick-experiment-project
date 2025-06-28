@@ -5,19 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.runbrick</groupId>
-        <artifactId>runbrick-experiment-project</artifactId>
+        <artifactId>rabbitmq-experiment-project</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>rabbitmq-experiment-project</artifactId>
-    <packaging>pom</packaging>
-    <description>rabbitmq实验田</description>
-
-    <modules>
-        <module>rabbitmq-foundation-project</module>
-        <module>rabbitmq-spring-project</module>
-        <module>rabbitmq-combat-project</module>
-    </modules>
+    <artifactId>rabbitmq-direct-project</artifactId>
+    <description>Direct Exchange</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -25,4 +19,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.25.0</version>
+        </dependency>
+    </dependencies>
 </project>
