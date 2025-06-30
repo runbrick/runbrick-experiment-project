@@ -14,7 +14,6 @@
     <modules>
         <module>xxljob-experiment-project</module>
         <module>plc4x-experiment-project</module>
-        <module>plc4x-experiment-project/plx4x-modbus-project</module>
         <module>mockito-experiment-project</module>
         <module>message-queue-project</module>
     </modules>

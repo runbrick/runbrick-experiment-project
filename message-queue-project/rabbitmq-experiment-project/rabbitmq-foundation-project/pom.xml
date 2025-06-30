@@ -13,10 +13,31 @@
     <packaging>pom</packaging>
     <description>基础实验</description>
 
+    <modules>
+        <module>rabbitmq-hello-world-project</module>
+        <module>rabbitmq-work-queues-project</module>
+        <module>rabbitmq-publish-subscribe-project</module>
+        <module>rabbitmq-routing-project</module>
+        <module>rabbitmq-topic-project</module>
+        <module>rabbitmq-publish-confirm</module>
+    </modules>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <ampq.client.version>5.25.0</ampq.client.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>${ampq.client.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>

@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.runbrick</groupId>
-        <artifactId>plc4x-experiment-project</artifactId>
+        <artifactId>rabbitmq-foundation-project</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>plx4x-modbus-project</artifactId>
+    <artifactId>rabbitmq-routing-project</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -17,23 +17,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
     <dependencies>
         <dependency>
-            <groupId>org.apache.plc4x</groupId>
-            <artifactId>plc4j-driver-s7</artifactId>
-            <version>0.12.0</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.plc4x</groupId>
-            <artifactId>plc4j-driver-modbus</artifactId>
-            <version>0.12.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
         </dependency>
     </dependencies>
+
 </project>

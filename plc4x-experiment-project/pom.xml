@@ -12,6 +12,10 @@
     <artifactId>plc4x-experiment-project</artifactId>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>plx4x-modbus-project</module>
+    </modules>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

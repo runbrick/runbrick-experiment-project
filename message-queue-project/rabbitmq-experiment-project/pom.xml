@@ -20,7 +20,6 @@
         <module>rabbitmq-spring-project</module>
         <!--实战-->
         <module>rabbitmq-combat-project</module>
-        <module>rabbitmq-foundation-project/rabbitmq-direct-project</module>
     </modules>
 
     <properties>
