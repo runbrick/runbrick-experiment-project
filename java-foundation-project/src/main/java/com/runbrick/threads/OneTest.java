@@ -1,6 +1,8 @@
 package com.runbrick.threads;
 
 
+import java.util.concurrent.TimeUnit;
+
 public class OneTest {
 
     public static void main(String[] args) {
@@ -9,6 +11,10 @@ public class OneTest {
         thread1.setName("A"); // 可以给线程设置名字
         MyThread thread2 = new MyThread();
         thread2.setName("B");
+
+        // 设置守护线程
+        thread1.setDaemon(false);
+        thread2.setDaemon(false);
 
         thread1.start();
         thread2.start();
@@ -27,6 +33,11 @@ public class OneTest {
 class MyThread extends Thread {
     @Override
     public void run() {
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("当前线程为：" + Thread.currentThread().getName());
     }
 }
