@@ -68,10 +68,31 @@ public class FiveTest {
 //        System.out.println(finalPriceFuture.get()); // 输出: 最终价格是: 85.0
 
         // 等待所有任务完成
-        CompletableFuture<String> f1 = CompletableFuture.supplyAsync(() -> { try { TimeUnit.SECONDS.sleep(2); } catch (Exception e) {} return "用户数据"; });
-        CompletableFuture<String> f2 = CompletableFuture.supplyAsync(() -> { try { TimeUnit.SECONDS.sleep(1); } catch (Exception e) {} return "新闻列表"; });
-        CompletableFuture<String> f3 = CompletableFuture.supplyAsync(() -> { try { TimeUnit.SECONDS.sleep(3); } catch (Exception e) {} return "天气预报"; });
+        CompletableFuture<String> f1 = CompletableFuture.supplyAsync(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (Exception e) {
+            }
+            return "用户数据";
+        });
+        CompletableFuture<String> f2 = CompletableFuture.supplyAsync(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (Exception e) {
+            }
+            return "新闻列表";
+        });
+        CompletableFuture<String> f3 = CompletableFuture.supplyAsync(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (Exception e) {
+            }
+            return "天气预报";
+        });
+
+
         CompletableFuture<Void> allFutures = CompletableFuture.allOf(f1, f2, f3);
+
 
         allFutures.join();
         System.out.println("所有并行任务都已完成！");

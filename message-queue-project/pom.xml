@@ -11,7 +11,9 @@
 
     <artifactId>message-queue-project</artifactId>
     <packaging>pom</packaging>
+
     <modules>
+        <module>boot-event-project</module>
         <module>rabbitmq-experiment-project</module>
     </modules>
 
