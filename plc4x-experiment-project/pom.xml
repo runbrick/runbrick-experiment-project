@@ -13,7 +13,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>plx4x-modbus-project</module>
+        <module>plc4x-modbus-project</module>
+        <module>plc4x-opcua-project</module>
     </modules>
 
     <properties>
