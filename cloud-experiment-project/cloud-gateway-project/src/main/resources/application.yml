@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: cloud-gateway-project
+  main:
+    allow-circular-references: true # 允许循环依赖，因为项目是三层架构，无法避免这个情况。
+  config:
+    import:
+      - optional:nacos:${spring.application.name}.yml # 加载【Nacos】的配置
+
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: cloud-system-project
+            uri: lb://cloud-system-project
+            predicates:
+              - Path=/cloud-system/**
+            filters:
+              - StripPrefix=1
+    nacos:
+      server-addr: 127.0.0.1:48848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: public
+        group: DEFAULT_GROUP
+        metadata:
+          version: 1.0.0
+      config:
+        namespace: public
+        group: DEFAULT_GROUP
