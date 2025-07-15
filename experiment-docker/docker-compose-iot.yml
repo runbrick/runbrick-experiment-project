@@ -1,0 +1,27 @@
+services:
+  # admin public
+  # 123qwe..
+  experiment-mqtt-emqx:
+    image: "emqx/emqx:5.1.0"
+    networks:
+      - experiment_network
+    ports:
+      - 1883:1883
+      - 8081:8081
+      - 8083:8083
+      - 8084:8084
+      - 8883:8883
+      - 18083:18083
+  experiment-mqtt-emqx-neuron:
+    image: "emqx/neuron:latest"
+    networks:
+      - experiment_network
+    ports:
+      - 7000:7000
+      - 9081:9081
+
+
+# 定义自定义网络 (推荐做法，便于服务间通信)
+networks:
+  experiment_network:
+    driver: bridge
