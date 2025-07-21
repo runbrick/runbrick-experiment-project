@@ -1,0 +1,17 @@
+services:
+  experiment-seata-server:
+    image: seataio/seata-server:1.8.0.2
+    hostname: experiment-seata-server
+    ports:
+      - "8091:8091"
+      - "7091:7091"
+    environment:
+      - SEATA_PORT=8091
+      - STORE_MODE=file
+    networks:
+      - experiment_network
+
+# 定义自定义网络 (推荐做法，便于服务间通信)
+networks:
+  experiment_network:
+    driver: bridge
